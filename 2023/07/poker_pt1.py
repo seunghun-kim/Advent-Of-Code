@@ -72,15 +72,13 @@ def calc_rank(hand):
 
 hand_bid_list = []
 for line in lines:
-    if line == '45J97 152\n':
-        print("Catch")
     hand, bid = line.strip().split(' ')
     hand_rank = calc_rank(hand)
-    print("Hand {} is {}, rank = {}".format(hand, HandType(int(math.floor(hand_rank))).name,hand_rank))
+    # print("Hand {} is {}, rank = {}".format(hand, HandType(int(math.floor(hand_rank))).name,hand_rank))
     hand_bid_list.append((hand_rank, hand, bid))
 
 hand_bid_list.sort(reverse=True)
-print(hand_bid_list)
+# print(hand_bid_list)
 
 total_winnings = 0
 for i in range(len(hand_bid_list)):
