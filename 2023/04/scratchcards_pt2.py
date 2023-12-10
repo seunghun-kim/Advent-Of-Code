@@ -11,8 +11,8 @@ for line in lines:
     game, numbers = line.strip().split(":")  # game = "Game 1", numbers = "41 48 83 86 17 | 83 86  6 31 17  9 48 53"
     
     game_no = int(list(filter(None, game.split(" ")))[1])
-    winning_numbers = list(map(lambda x: int(x), filter(None, numbers.split("|")[0].split(" "))))
-    numbers_i_have = list(map(lambda x: int(x), filter(None, numbers.split("|")[1].split(" "))))
+    winning_numbers = [int(x) for x in numbers.split("|")[0].split()]
+    numbers_i_have = [int(x) for x in numbers.split("|")[1].split()]
     
     match_count = 0
     for num in numbers_i_have:
